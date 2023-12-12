@@ -16,6 +16,17 @@ env_file_path = 'src/.env'
 # Load environment variables from the specified .env file
 load_dotenv(dotenv_path=env_file_path)
 
+# Check if the script is running as root
+print(Fore.BLUE + "Checking if the script is running as root!")
+
+time.sleep(2)
+
+if os.geteuid() != 0:
+    print(Fore.YELLOW + "This script is not running as root, please run it as root!")
+    exit(1)
+
+time.sleep(1)
+
 # Check if colorama is installed
 print("Cheking if coloram is already installed!")
 
@@ -42,17 +53,6 @@ print(Fore.RED + sys.version)
 print(Fore.LIGHTMAGENTA_EX + "Python version:", sys.version_info)
 
 time.sleep(2)
-
-# Check if the script is running as root
-print(Fore.BLUE + "Checking if the script is running as root!")
-
-time.sleep(2)
-
-if os.geteuid() != 0:
-    print(Fore.YELLOW + "This script is not running as root, please run it as root!")
-    exit(1)
-
-time.sleep(1)
 
 # Get the API key from the environment variables
 openai.api_key = os.getenv("API_KEY")
