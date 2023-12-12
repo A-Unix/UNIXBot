@@ -48,9 +48,9 @@ print(Fore.BLUE + "Checking if the script is running as root!")
 
 time.sleep(2)
 
-#if os.geteuid() != 0:
- #   print(Fore.YELLOW + "This script is not running as root, please run it as root!")
-  #  exit(1)
+if os.geteuid() != 0:
+    print(Fore.YELLOW + "This script is not running as root, please run it as root!")
+    exit(1)
 
 time.sleep(1)
 
