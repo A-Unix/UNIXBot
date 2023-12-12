@@ -12,6 +12,9 @@ apt install python3-pip -y
 echo -e "\nInstalling required dependencies, please wait!\n"
 sleep 1
 
+git rm --cached .env
+git commit -m "Untrack .env file"
+
 # Install required dependencies
 pip install openai
 pip install --upgrade openai
