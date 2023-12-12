@@ -5,7 +5,13 @@ from dotenv import load_dotenv
 import os
 import subprocess
 import time
-from colorama import init, Fore
+
+try:
+    from colorama import init, Fore
+except ImportError:
+    print(Fore.Red + "Colorama is not installed. Installing it...")
+    subprocess.run(["pip", "install", "colorama"], check=True)
+    from colorama import init, Fore
 
 # Initialize colorama
 init(autoreset=True)
@@ -27,16 +33,6 @@ if os.geteuid() != 0:
 
 time.sleep(1)
 
-# Check if colorama is installed
-print("Cheking if coloram is already installed!")
-
-# Install colorama using subprocess
-subprocess.run(["pip", "install", "colorama"])
-
-print("Please wait!")
-
-time.sleep(2)
-
 # Clear the terminal screen
 os.system("clear")
 
@@ -54,8 +50,11 @@ print(Fore.LIGHTMAGENTA_EX + "Python version:", sys.version_info)
 
 time.sleep(2)
 
-# Get the API key from the environment variables
-openai.api_key = os.getenv("API_KEY")
+api_key = os.getenv("API_KEY")
+if not api_key:
+    print(Fore.RED + "API_KEY not found in the environment variables.")
+    sys.exit(1)
+openai.api_key = api_key
 
 def chat_with_gpt3(prompt):
     response = openai.Completion.create(
