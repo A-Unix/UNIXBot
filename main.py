@@ -10,8 +10,11 @@ from colorama import init, Fore
 # Initialize colorama
 init(autoreset=True)
 
-# Load environment variables from .env file
-load_dotenv()
+# Specify the path to your .env file inside the 'src' folder
+env_file_path = 'src/.env'
+
+# Load environment variables from the specified .env file
+load_dotenv(dotenv_path=env_file_path)
 
 # Check if colorama is installed
 print("Cheking if coloram is already installed!")
