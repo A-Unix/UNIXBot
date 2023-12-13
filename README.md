@@ -25,8 +25,14 @@ chmod +x *
 ```bash
 python3 main.py
 ```
-## Obtain your API_KEY by following instructions in this video
+## Obtain your API_KEY by following instructions below:
 
-[![Click to Watch the Video](src/thumb.png)](src/video.mp4?autoplay=1)
+### Head over to this link
+```bash
+https://platform.openai.com/api-keys
+```
+### Click on the button named as ```Create new secret key```
+### copy that generated key and then paste it in the file named ```.env``` located in the src folder
+### Save the file after pasting the key then run the ```main.py``` file.
 
 Enjoy :)
