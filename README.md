@@ -25,4 +25,8 @@ chmod +x *
 ```bash
 python3 main.py
 ```
+## Obtain your API_KEY by following instructions in this video
+
+[![Click to Watch the Video](src/thumb.png)](src/video.mp4)
+
 Enjoy :)
