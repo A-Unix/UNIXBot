@@ -58,9 +58,9 @@ openai.api_key = api_key
 
 def chat_with_gpt3(prompt):
     response = openai.Completion.create(
-        model="text-davinci-003",  # You can experiment with different models
+        model="gpt-3.5-turbo",  # You can experiment with different models
         prompt=prompt,
-        max_tokens=20  # Adjust based on your desired response length
+        max_tokens=150  # Adjust based on your desired response length
     )
 
     return response.choices[0].text.strip()
