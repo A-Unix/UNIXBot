@@ -17,8 +17,8 @@ git commit -m "Untrack .env file"
 
 # Install required dependencies
 pip install openai
+pip install openai==0.28 
 pip install --upgrade openai
-openai migrate
 pip install python-dotenv
 
 echo -e "\nDone, run the 'main.py' file now!\n"
