@@ -16,7 +16,6 @@ git rm --cached .env
 git commit -m "Untrack .env file"
 
 # Install required dependencies
-pip install openai
 pip install openai==0.28 
 pip install --upgrade openai
 pip install python-dotenv
