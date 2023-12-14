@@ -10,11 +10,14 @@ try:
     from colorama import init, Fore
 except ImportError:
     print(Fore.Red + "Colorama is not installed. Installing it...")
-    subprocess.run(["pip", "install", "colorama", openai==0.28 ], check=True)
+    subprocess.run(["pip", "install", "colorama"], check=True)
     from colorama import init, Fore
 
 # Initialize colorama
 init(autoreset=True)
+
+# Install OpenAI 0.28 for error handling
+subprocess.run(["pip", "install", "openai==0.28"])
 
 # Specify the path to your .env file inside the 'src' folder
 env_file_path = 'src/.env'
