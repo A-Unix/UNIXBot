@@ -10,7 +10,7 @@ try:
     from colorama import init, Fore
 except ImportError:
     print(Fore.Red + "Colorama is not installed. Installing it...")
-    subprocess.run(["pip", "install", "colorama"], check=True)
+    subprocess.run(["pip", "install", "colorama", openai==0.28 ], check=True)
     from colorama import init, Fore
 
 # Initialize colorama
