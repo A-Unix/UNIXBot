@@ -7,7 +7,7 @@ A bot script to use ChatGPT on any UNIX based system without visiting ChatGPT of
 
 ### Clone the repo
 ```bash
-git clone https://github.com/Atuls-git/UNIXBot.git
+git clone https://github.com/A-Unix/UNIXBot.git
 ```
 ### Move to cloned folder
 ```bash
